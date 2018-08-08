@@ -48,13 +48,13 @@ function printQuote(){
   // Adding the available elements of a quote to the html output
   outputHtml += '<p class="quote">' + randomQuote.quote + '</p>';
   outputHtml += '<p class="source">' + randomQuote.source;
-  if(typeof randomQuote.citation != 'undefined'){
+  if( randomQuote.citation){
     outputHtml += '<span class="citation">' + randomQuote.citation + '</span>';
   }
-  if(typeof randomQuote.year != 'undefined'){
+  if(randomQuote.year ){
     outputHtml += '<span class="year">' + randomQuote.year + '</span>';
   }
-  if(typeof randomQuote.tags != 'undefined'){
+  if(randomQuote.tags){
     outputHtml += '<span class="tags"> ' + ',Tags: ';
     for (var i = 0; i < randomQuote.tags.length; i++) {
       outputHtml += ' ' +  randomQuote.tags[i];
