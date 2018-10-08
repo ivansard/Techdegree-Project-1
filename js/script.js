@@ -1,6 +1,6 @@
 // FSJS - Random Quote Generator
 
-// Create the array of quote objects and name it quotes
+// Create the quoteArray of quote objects and name it quotes
 
 var quotes = [
    { quote: "Your time is limited, so don't waste it living someone else's life",
@@ -33,9 +33,9 @@ var quotes = [
 
 // Create the getRandomQuuote function and name it getRandomQuote
 
-function getRandomQuote(array){
+function getRandomQuote(quoteArray){
   var randomNum = Math.floor(Math.random() * quotes.length);
-  return array[randomNum];
+  return quoteArray[randomNum];
 }
 
 // Create the printQuote funtion and name it printQuote
@@ -70,9 +70,11 @@ function printQuote(){
 
 }
 
-// A function that changes the background color
+// A function that changes the background color and the color of the button to the same color
 function changeBackgroundColor(){
-  document.body.style.background = randomRgb();
+  const randomColor = randomRgb()
+  document.body.style.background = randomColor;
+  document.getElementById('loadQuote').style.background = randomColor;
 }
 
 // Generates a random rgb combination
@@ -83,7 +85,7 @@ function randomRgb(){
   return "rgb(" + red + ',' + green + ',' + blue + ")";
 }
 
-// Prints out a random quote on every 20 seconds
+// Prints out a random quote on every 8 seconds
 var timeoutId = setInterval(printQuote, 8000);
 
 // This event listener will respond to "Show another quote" button clicks
